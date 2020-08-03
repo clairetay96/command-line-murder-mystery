@@ -1,0 +1,19 @@
+ls
+cat crimescene | grep "CLUE" //reveals person of interest, female named Annabel
+cat people | grep "Annabel" //reveals two females named Annabel & their respective addresses
+cd streets
+ls
+sed -n 40p Hart_Place //reveals interview 47246024 of interest
+sed -n 179p Buckingham_Place //reveals interview 699607 of interest
+cd ..
+cd interviews/
+ls
+cat interview-47246024 //false lead
+cat interview-699607 //reveals blue Honda w license plate containing L337 of interest
+cd ..
+cat vehicles | HEAD -n 15 // to determine how many rows entered per vehicle
+cat vehicles | grep -i "L337" -A 6 //prints 6 lines following license plate no
+cd memberships/
+grep -e "Joe Germuska" -e "Jacqui Maher" -e "Jeremy Bowers" -e "Erika Owens" AAA Delta_Skymiles library.txt Museum_of_Bash_History //checking which of the suspects have memberships in all four, Jeremy Bowers and Jacqui Maher left
+cd ..
+cat people | grep -e "Jeremy Bowers" -e "Jacqui Maher" //reveals Jacqui Maher is female, so Jeremy Bowers must be the perpetrator
